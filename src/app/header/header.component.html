@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Yu-gi-Oh! Forbidden Memories Fusion Wiki</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">All cards <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Hand</a></li>
+                <li><a href="#">Fusions</a></li>
+            </ul>
+
+            <div class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input 
+                    type="text" 
+                    class="form-control" 
+                    placeholder="Search"
+                    [(ngModel)]="searchInput">
+                </div>
+                <button class="btn btn-default" (click)="clearSearchBox()">Clear</button>
+                <button type="submit" class="btn btn-default" style="margin-left: 10px" (click)="resetAll()">Restart</button>
+            </div>
+        </div>
+    </div>    
+</nav>
