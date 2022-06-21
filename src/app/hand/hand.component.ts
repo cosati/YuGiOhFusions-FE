@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { cards, Card } from '../shared/cards';
+import { HandService } from '../hand.service';
+
 @Component({
   selector: 'app-hand',
   templateUrl: './hand.component.html',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HandComponent implements OnInit {
 
-  constructor() { }
+  cards = this.handService.getCurrentCards();
+
+  constructor(
+    private handService: HandService,
+  ) { }
 
   ngOnInit(): void {
   }

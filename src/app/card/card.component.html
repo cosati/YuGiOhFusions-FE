@@ -23,9 +23,9 @@
                     <li><a href="#">One more separated link</a></li>
                 </ul>
             </li>-->
-            <li><span class="badge badge-primary badge-pill">0</span></li>
-            <li><button type="submit" class="btn btn-primary">Add to hand</button></li>
-            <li><button type="submit" class="btn btn-danger">Remove one</button></li>
+            <li><span class="badge badge-primary badge-pill">{{ card.addedToHand }}</span></li>
+            <li><button type="submit" class="btn btn-primary" (click)="addToCurrentHand(card)">Add to hand</button></li>
+            <li><button type="submit" class="btn btn-danger" (click)="removeCardFromHand(card)">Remove one</button></li>
             </ul>
         </div>
     </div>

@@ -7,6 +7,7 @@ export interface Card {
     cardType: string,
     monsterType: string,
     cost: number;
+    addedToHand: number;
 }
 
 export const cards = [
@@ -18,7 +19,8 @@ export const cards = [
         level: 8,
         cardType: "Monster",
         monsterType: "Dragon",
-        cost: 999999
+        cost: 999999,
+        addedToHand: 0
     },
     {
         cardId: 2,
@@ -28,7 +30,8 @@ export const cards = [
         level: 4,
         cardType: "Monster",
         monsterType: "Spellcaster",
-        cost: 160
+        cost: 160,
+        addedToHand: 0        
     },
     {
         cardId: 3,
@@ -38,7 +41,8 @@ export const cards = [
         level: 4,
         cardType: "Monster",
         monsterType: "Beast-Warrior",
-        cost: 70
+        cost: 70,
+        addedToHand: 0
     },
     {
         cardId: 4,
@@ -48,6 +52,7 @@ export const cards = [
         level: 3,
         cardType: "Monster",
         monsterType: "Dragon",
-        cost: 999999
+        cost: 999999,
+        addedToHand: 0
     }
 ];
