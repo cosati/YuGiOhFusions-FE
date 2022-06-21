@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
 import { HandComponent } from './hand/hand.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FusionsComponent } from './fusions/fusions.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
     CardListComponent,
     HeaderComponent,
     CardComponent,
-    HandComponent
+    HandComponent,
+    FusionsComponent
   ],
   imports: [
     BrowserModule,

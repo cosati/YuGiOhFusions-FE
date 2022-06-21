@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router, NavigationEnd  } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   searchInput = "";
+  currentRoute: string;
 
-  constructor() { }
+  constructor(private router: Router) { 
+    //console.log(this.router.url);
+  }
 
   ngOnInit(): void {
+    console.log(this.router.url);
   }
 
   clearSearchBox() {
@@ -21,5 +26,4 @@ export class HeaderComponent implements OnInit {
     this.clearSearchBox();
     //TODO: clear hand and fusions pane
   }
-
 }
