@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { HeaderComponent } from './header/header.component';
 import { CardComponent } from './card/card.component';
+import { HandComponent } from './hand/hand.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardListComponent,
     HeaderComponent,
-    CardComponent
+    CardComponent,
+    HandComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

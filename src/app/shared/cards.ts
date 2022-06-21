@@ -39,5 +39,15 @@ export const cards = [
         cardType: "Monster",
         monsterType: "Beast-Warrior",
         cost: 70
+    },
+    {
+        cardId: 4,
+        cardName: "Baby Dragon",
+        atk: 1200,
+        def: 700,
+        level: 3,
+        cardType: "Monster",
+        monsterType: "Dragon",
+        cost: 999999
     }
 ];
