@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { cards, Card } from '../shared/cards';
+
+import { HandService } from '../hand.service';
 
 @Component({
   selector: 'app-card-list',
@@ -8,14 +10,24 @@ import { cards, Card } from '../shared/cards';
 })
 export class CardListComponent implements OnInit {
   cards = cards;
+  searchInput: string = "";
 
-  constructor() { }
+  constructor(
+    private handService: HandService,
+  ) {
+   }
 
   ngOnInit(): void {
   }
 
-  findFilterMatches(input: Card) : any {
-    return input.cardName.toLocaleLowerCase().indexOf("") >= 0;
+  clearSearchBox() {
+    this.searchInput = "";
+  }
+
+  resetAll() {
+    this.clearSearchBox();
+    this.handService.clearHand();
+    //TODO: clear fusions pane
   }
 
 }

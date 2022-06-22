@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { HandService } from '../hand.service';
 
@@ -8,7 +8,6 @@ import { HandService } from '../hand.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  searchInput: string = "";
 
   constructor(
     private handService: HandService,
@@ -18,13 +17,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  clearSearchBox() {
-    this.searchInput = "";
-  }
-
   resetAll() {
-    this.clearSearchBox();
     this.handService.clearHand();
     //TODO: clear fusions pane
   }
+
+  updateFilterValue() {
+    //this.filterService.updateFilter(this.searchInput);
+  }
+
 }
