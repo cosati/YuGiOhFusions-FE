@@ -1,8 +1,8 @@
-import { CallbackPipe } from './callback.pipe';
+import { cardFilterPipe } from './callback.pipe';
 
 describe('CallbackPipe', () => {
   it('create an instance', () => {
-    const pipe = new CallbackPipe();
+    const pipe = new cardFilterPipe();
     expect(pipe).toBeTruthy();
   });
 });

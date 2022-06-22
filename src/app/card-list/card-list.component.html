@@ -13,7 +13,7 @@
     </div>
     </li>
     <li 
-    *ngFor="let card of cards | callback:searchInput"
+    *ngFor="let card of cards | cardFilter:searchInput"
     class="list-group-item d-flex justify-content-between align-items-center">
         <app-card [card]="card"></app-card>
     </li>

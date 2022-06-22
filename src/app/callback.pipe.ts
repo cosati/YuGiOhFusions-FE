@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'callback',
+  name: 'cardFilter',
 })
-export class CallbackPipe implements PipeTransform {
+export class cardFilterPipe implements PipeTransform {
 
   transform(input: any, filterString: string): any {
     if (input === undefined || input === null) {

@@ -9,7 +9,7 @@ import { CardComponent } from './card/card.component';
 import { HandComponent } from './hand/hand.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FusionsComponent } from './fusions/fusions.component';
-import { CallbackPipe } from './callback.pipe';
+import { cardFilterPipe } from './callback.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { CallbackPipe } from './callback.pipe';
     CardComponent,
     HandComponent,
     FusionsComponent,
-    CallbackPipe
+    cardFilterPipe
   ],
   imports: [
     BrowserModule,
