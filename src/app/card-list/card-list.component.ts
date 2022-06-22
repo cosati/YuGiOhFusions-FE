@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { cards } from '../shared/cards';
+import { cards, Card } from '../shared/cards';
 
 @Component({
   selector: 'app-card-list',
@@ -12,6 +12,10 @@ export class CardListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  findFilterMatches(input: Card) : any {
+    return input.cardName.toLocaleLowerCase().indexOf("") >= 0;
   }
 
 }
