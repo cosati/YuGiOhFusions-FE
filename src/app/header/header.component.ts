@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+import { HandService } from '../hand.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  searchInput = "";
+  searchInput: string = "";
 
-  constructor() { 
+  constructor(
+    private handService: HandService,
+  ) { 
   }
 
   ngOnInit(): void {
@@ -20,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   resetAll() {
     this.clearSearchBox();
-    //TODO: clear hand and fusions pane
+    this.handService.clearHand();
+    //TODO: clear fusions pane
   }
 }

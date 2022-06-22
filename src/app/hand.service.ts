@@ -19,7 +19,9 @@ export class HandService {
     if (index > -1) {
       this.currentHand.splice(index, 1);
       card.addedToHand--;
+      return true;
     }
+    return false;
   }
 
   getCurrentCards() {
@@ -27,6 +29,9 @@ export class HandService {
   }
 
   clearHand() {
+    this.currentHand.forEach(function(card) {
+      card.addedToHand = 0;
+    });
     this.currentHand = [];
     return this.currentHand;
   }

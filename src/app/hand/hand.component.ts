@@ -19,4 +19,14 @@ export class HandComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUniqueCardList(cards: Card[]): Card[] {
+    let uniqueList: Card[] = [];
+    cards.forEach(function (card) {
+      if (uniqueList.indexOf(card) < 0) {
+        uniqueList.push(card);
+      }
+    });
+    return uniqueList;
+  }
+
 }

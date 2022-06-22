@@ -31,4 +31,11 @@ export class CardComponent implements OnInit {
     this.handService.removeFromHand(card);
   }
 
+  removeAllCardFromHand(card: Card) {
+    let hasCard = true;
+    while (hasCard) {
+      hasCard = this.handService.removeFromHand(card);
+    }
+  }
+
 }
