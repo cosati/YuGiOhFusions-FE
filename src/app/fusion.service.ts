@@ -20,11 +20,10 @@ export class FusionService {
   }
 
   public getFusions(cards: Card[]): Observable<any> {
-    console.log(cards);
+    // console.log(cards);
     let queryParams = new HttpParams();
     cards.forEach(card => queryParams = queryParams.append("cardIds", card.id));
-    console.log(queryParams);
-    //let tempurl = "http://localhost:8080/YuGiOhFusions/cards/fusions?cardIds=1&cardIds=2&cardIds=3&cardIds=4&cardIds=5&cardIds=6&cardIds=7&cardIds=8&cardIds=9&cardIds=10&cardIds=12&cardIds=11&cardIds=37&cardIds=38&cardIds=39&cardIds=40";
+    // console.log(queryParams);
     return this.httpClient.get(this.baseUrl, {params:queryParams});
   }
 
