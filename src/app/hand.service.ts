@@ -10,6 +10,7 @@ export class HandService {
   constructor() { }
 
   addToHand(card: Card) {
+    if (card.addedToHand === undefined) card.addedToHand = 0;
     card.addedToHand++;
     this.currentHand.push(card);
   }

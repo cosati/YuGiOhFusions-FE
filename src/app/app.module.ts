@@ -10,6 +10,9 @@ import { HandComponent } from './hand/hand.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FusionsComponent } from './fusions/fusions.component';
 import { cardFilterPipe } from './callback.pipe';
+import { FusionComponent } from './fusion/fusion.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CardService } from './card.service';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,16 @@ import { cardFilterPipe } from './callback.pipe';
     CardComponent,
     HandComponent,
     FusionsComponent,
-    cardFilterPipe
+    cardFilterPipe,
+    FusionComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [CardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { Card } from "../shared/cards";
 import { HandService } from '../hand.service';
+import { CardService } from '../card.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
 export class CardComponent implements OnInit {
 
@@ -16,10 +17,6 @@ export class CardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  }
-
-  addCartToHand(card: Card) {
-    window.alert(card.cardName + " added to hand!");
   }
 
   addToCurrentHand(card: Card) {

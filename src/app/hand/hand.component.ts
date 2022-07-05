@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { cards, Card } from '../shared/cards';
+import { Card } from '../shared/cards';
 import { HandService } from '../hand.service';
 
 @Component({
   selector: 'app-hand',
   templateUrl: './hand.component.html',
-  styleUrls: ['./hand.component.scss']
+  styleUrls: ['./hand.component.scss'],
 })
 export class HandComponent implements OnInit {
 

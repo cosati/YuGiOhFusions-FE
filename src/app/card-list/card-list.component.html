@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group" *ngIf="!isFetching">
     <li
     class="list-group-item d-flex justify-content-between align-items-center">
     <div class="row">
@@ -8,13 +8,18 @@
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" (click)="clearSearchBox()">Clear</button>
           </span>
-        </div><!-- /input-group -->
+        </div>
       </div>
     </div>
     </li>
     <li 
-    *ngFor="let card of cards | cardFilter:searchInput"
+    *ngFor="let card of this.cardService.cards | cardFilter:searchInput"
     class="list-group-item d-flex justify-content-between align-items-center">
         <app-card [card]="card"></app-card>
     </li>
+</ul>
+<ul class="list-group" *ngIf="isFetching">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Loading...
+  </li>
 </ul>
