@@ -1,8 +1,8 @@
 <div 
 class="panel panel-default">
-    <div class="panel-heading">{{ fusion.firstCard.id }} - {{ fusion.firstCard.cardName }} + 
-        {{ fusion.secondCard.id }} - {{ fusion.secondCard.cardName }}
-    = {{ fusion.monster.id }} - {{ fusion.monster.cardName }}</div>
+    <div class="panel-heading">{{ fusion.firstCard.cardName }} + 
+        {{ fusion.secondCard.cardName }} 
+    = {{ fusion.monster.cardName }} ({{ fusion.monster.atk }}, {{ fusion.monster.def }})</div>
     <div class="panel-body" *ngFor="let subFusion of fusion.nextFusions">
         <app-fusion [fusion]="subFusion"></app-fusion>
     </div>

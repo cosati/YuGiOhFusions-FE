@@ -7,13 +7,11 @@ import { Fusion } from '../shared/fusion';
   selector: 'app-fusions',
   templateUrl: './fusions.component.html',
   styleUrls: ['./fusions.component.scss'],
-  providers: [FusionService, HandService]
 })
 export class FusionsComponent implements OnInit {
-  fusions: Fusion[] = this.fusionService.getFusionList();
-
+ 
   constructor(
-    private fusionService: FusionService,
+    public fusionService: FusionService,
     private handService: HandService,
   ) { }
 

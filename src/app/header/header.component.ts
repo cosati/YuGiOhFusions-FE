@@ -7,7 +7,6 @@ import { HandService } from '../hand.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [HandService, FusionService]
 })
 export class HeaderComponent implements OnInit {
 
