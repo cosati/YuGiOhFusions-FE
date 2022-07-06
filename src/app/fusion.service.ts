@@ -8,7 +8,9 @@ import { Fusion } from './shared/Fusion';
   providedIn: 'root'
 })
 export class FusionService {
-  private baseUrl = "http://localhost:8080/YuGiOhFusions/cards/fusions?";
+  private baseUrl = "http://localhost:8080/YuGiOhFusions/cards";
+  private fusionsUrl = "/fusions";
+  private cardFusionsUrl = "/monsters"
   public fusions: Fusion[];
 
   constructor(
@@ -22,9 +24,17 @@ export class FusionService {
   public getFusions(cards: Card[]): Observable<any> {
     // console.log(cards);
     let queryParams = new HttpParams();
-    cards.forEach(card => queryParams = queryParams.append("cardIds", card.id));
+    let url = this.baseUrl + this.fusionsUrl;
+    cards.forEach(card => queryParams = queryParams.append("cardId", card.id));
     // console.log(queryParams);
-    return this.httpClient.get(this.baseUrl, {params:queryParams});
+    return this.httpClient.get(url, { params:queryParams });
+  }
+  
+  public getCardFusion(card: Card): Observable<any> {
+    let queryParams = new HttpParams();
+    let url = this.baseUrl + this.cardFusionsUrl;
+    queryParams.set("cardId", card.id);
+    return this.httpClient.get(url, { params: queryParams });
   }
 
   public clearFusions() {

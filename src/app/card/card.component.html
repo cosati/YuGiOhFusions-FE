@@ -12,6 +12,7 @@
         <div class="collapse navbar-collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav navbar-right">
             <li *ngIf="card.addedToHand != undefined && card.addedToHand > 0"><span class="badge badge-primary badge-pill">{{ card.addedToHand }}</span></li>
+            <li><button type="submit" class="btn btn-success" (click)="addToCurrentHand(card)">All Matches</button></li>
             <li><button type="submit" class="btn btn-primary" (click)="addToCurrentHand(card)">Draw</button></li>
             <li><button type="submit" class="btn btn-warning" (click)="removeCardFromHand(card)">Remove one</button></li>
             <li><button type="submit" class="btn btn-danger" (click)="removeAllCardFromHand(card)">Remove all</button></li>
