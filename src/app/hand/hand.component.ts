@@ -10,13 +10,14 @@ import { HandService } from '../hand.service';
 })
 export class HandComponent implements OnInit {
 
-  cards = this.handService.getCurrentCards();
+  cards: Card[];
 
   constructor(
     private handService: HandService,
   ) { }
 
   ngOnInit(): void {
+    this.cards = this.handService.getCurrentCards();
   }
 
   getUniqueCardList(cards: Card[]): Card[] {

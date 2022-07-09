@@ -1,11 +1,15 @@
 <!--TODO: better display cards info for user -->
 <div 
 class="panel panel-default">
-    <div class="panel-heading">{{ fusion.firstCard.cardName }} + 
+    <div class="panel-heading fusion-panel">{{ fusion.firstCard.cardName }} + 
         {{ fusion.secondCard.cardName }} 
-    = {{ fusion.monster.cardName }} ({{ fusion.monster.atk }}, {{ fusion.monster.def }})</div>
+    = {{ fusion.monster.cardName }} ({{ fusion.monster.atk }}, {{ fusion.monster.def }})
+    <button type="submit" class="btn btn-primary apply-btn" (click)="applyFusion(fusion)">Apply</button>
+    </div>
     <div class="panel-body" *ngFor="let subFusion of fusion.nextFusions">
-        <app-fusion [fusion]="subFusion"></app-fusion>
+        <app-fusion 
+        [fusion]="subFusion"
+        (fusionApplied)="onFusionApplied()"></app-fusion>
     </div>
 </div>
 <!-- TODO display message if no fusion was found -->

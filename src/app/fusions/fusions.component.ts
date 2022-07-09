@@ -24,6 +24,8 @@ export class FusionsComponent implements OnInit {
     });
   }
 
-  //TODO: Add button to apply fusion on list, updating users hand
+  onFusionApplied() {
+    this.fusionService.fusions = [];
+  }
 
 }

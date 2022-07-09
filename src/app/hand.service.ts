@@ -16,10 +16,12 @@ export class HandService {
   }
 
   removeFromHand(card: Card) {
-    let index = this.currentHand.indexOf(card, 0);
+    //let index = this.currentHand.indexOf(card, 0);
+    let index = this.currentHand.findIndex(c => c.id == card.id);
     if (index > -1) {
+      this.currentHand[index].addedToHand--;
       this.currentHand.splice(index, 1);
-      card.addedToHand--;
+      //card.addedToHand--;
       return true;
     }
     return false;
